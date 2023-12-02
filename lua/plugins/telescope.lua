@@ -13,13 +13,14 @@ return {
       },
     },
   },
-
+  keys = {
+    { "<leader>/", vim.NIL },
+  },
   opts = {
     defaults = {
       mappings = {
         n = {
           ["t"] = require("trouble.providers.telescope").open_with_trouble,
-          -- ["<leader>/"] = false, -- doesnt work
         },
       },
     },
