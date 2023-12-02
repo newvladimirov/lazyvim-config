@@ -19,6 +19,7 @@ return {
       mappings = {
         n = {
           ["t"] = require("trouble.providers.telescope").open_with_trouble,
+          -- ["<leader>/"] = false, -- doesnt work
         },
       },
     },

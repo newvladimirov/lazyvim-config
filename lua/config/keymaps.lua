@@ -4,7 +4,29 @@
 --
 --
 
+function delete_buffer()
+  local bd = require("mini.bufremove").delete
+  if vim.bo.modified then
+    local choice = vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+    if choice == 1 then -- Yes
+      vim.cmd.write()
+      bd(0)
+    elseif choice == 2 then -- No
+      bd(0, true)
+    end
+  else
+    bd(0)
+  end
+end
+
 local mappings = {
+  ["<leader>cu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
+  ["<leader>ci"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
+
+  -- experemental bindigs
+  ["tsu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
+  ["tsi"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
+
   ["<C-h>"] = { "<cmd> NvimTmuxNavigateLeft<CR>", "Tmux window left" },
   ["<C-l>"] = { "<cmd> NvimTmuxNavigateRight<CR>", "Tmux window right" },
   ["<C-j>"] = { "<cmd> NvimTmuxNavigateDown<CR>", "Tmux window down" },
@@ -28,4 +50,4 @@ vim.keymap.set("n", "<leader><leader>h", "<CMD>BufferLineMovePrev<CR>")
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
-vim.keymap.set("n", "<leader>x", "<cmd>BufDel<CR>", { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>x", delete_buffer, { desc = "Close buffer" })
