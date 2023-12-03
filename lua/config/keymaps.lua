@@ -20,12 +20,12 @@ function delete_buffer()
 end
 
 local mappings = {
-  ["<leader>cu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
-  ["<leader>ci"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
+  -- ["<leader>cu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
+  -- ["<leader>ci"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
 
   -- experemental bindigs
-  ["tsu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
-  ["tsi"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
+  -- ["tsu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
+  -- ["tsi"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
 
   ["<C-h>"] = { "<cmd> NvimTmuxNavigateLeft<CR>", "Tmux window left" },
   ["<C-l>"] = { "<cmd> NvimTmuxNavigateRight<CR>", "Tmux window right" },

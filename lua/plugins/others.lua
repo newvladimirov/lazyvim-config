@@ -4,14 +4,14 @@ return {
   { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
   -- { "vimpostor/vim-tpipeline", opts = {} },
   -- { "fgheng/winbar.nvim", opts = { enabled = true }, event = "BufEnter" },
-  {
-    "jose-elias-alvarez/typescript.nvim",
-    config = function()
-      require("typescript").setup({})
-    end,
-    lazy = false,
-    opts = {},
-  },
+  -- {
+  --   "jose-elias-alvarez/typescript.nvim",
+  --   config = function()
+  --     require("typescript").setup({})
+  --   end,
+  --   lazy = false,
+  --   opts = {},
+  -- },
   {
     "mini.comment",
     opts = {
