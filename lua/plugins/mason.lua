@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       -- lua stuff
+      "prettier",
       "lua-language-server",
       "stylua",
 
@@ -10,15 +11,11 @@ return {
       "css-lsp",
       "html-lsp",
       "typescript-language-server",
-      -- "deno",
-      "prettier",
-
       "angular-language-server",
       "prisma-language-server",
       "graphql-language-service-cli",
       "json-lsp",
       "sqlls",
-
       "biome",
     },
   },

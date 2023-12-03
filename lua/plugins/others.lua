@@ -1,7 +1,9 @@
 return {
+  { "rafamadriz/friendly-snippets" },
   { "alexghergh/nvim-tmux-navigation", opts = {}, lazy = false },
   { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
-  { "fgheng/winbar.nvim", opts = { enabled = true }, event = "BufEnter" },
+  -- { "vimpostor/vim-tpipeline", opts = {} },
+  -- { "fgheng/winbar.nvim", opts = { enabled = true }, event = "BufEnter" },
   {
     "jose-elias-alvarez/typescript.nvim",
     config = function()
