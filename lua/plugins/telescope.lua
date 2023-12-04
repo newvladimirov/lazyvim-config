@@ -15,12 +15,14 @@ return {
   },
   keys = {
     { "<leader>/", vim.NIL },
+    { "<leader>gr", vim.NIL },
   },
   opts = {
     defaults = {
       mappings = {
         n = {
           ["t"] = require("trouble.providers.telescope").open_with_trouble,
+          ["C-t"] = require("trouble.providers.telescope").open_with_trouble,
         },
       },
     },

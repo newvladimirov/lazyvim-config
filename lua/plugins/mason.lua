@@ -16,7 +16,7 @@ return {
       "graphql-language-service-cli",
       "json-lsp",
       "sqlls",
-      "biome",
+      -- "biome",
     },
   },
 }

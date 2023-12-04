@@ -25,7 +25,7 @@ local mappings = {
 
   -- experemental bindigs
   -- ["tsu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
-  -- ["tsi"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
+  ["tsi"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
 
   ["<C-h>"] = { "<cmd> NvimTmuxNavigateLeft<CR>", "Tmux window left" },
   ["<C-l>"] = { "<cmd> NvimTmuxNavigateRight<CR>", "Tmux window right" },
@@ -49,5 +49,6 @@ vim.keymap.set("n", "<leader><leader>h", "<CMD>BufferLineMovePrev<CR>")
 -- vim.keymap.set("n", "<S-Space>l", "<cmd>BufferLineMoveNext<cr>", { desc = "Next buffer to the right" })
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+-- vim.keymap.set("n", "<leader>gr", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Go to reference (T)" })
 
 vim.keymap.set("n", "<leader>x", delete_buffer, { desc = "Close buffer" })

@@ -11,9 +11,19 @@ return {
     local icons = require("lazyvim.config").icons
     return {
       options = {
-        section_separators = { left = "", right = "" },
-        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
       },
+      -- tabline = {
+      --   lualine_a = {
+      --     {
+      --       "buffers",
+      --       separator = { left = "", right = "" },
+      --       right_padding = 2,
+      --       symbols = { alternate_file = "" },
+      --     },
+      --   },
+      -- },
       sections = {
         lualine_a = { "mode" },
         lualine_b = {},
@@ -32,22 +42,7 @@ return {
           },
         },
         lualine_x = {
-          {
-            function()
-              return require("noice").api.status.command.get()
-            end,
-            cond = function()
-              return package.loaded["noice"] and require("noice").api.status.command.has()
-            end,
-            color = Util.ui.fg("Statement"),
-          },
-          { "location", padding = { left = 1, right = 1 } },
-        },
-        lualine_y = {
-          { "progress", separator = " ", padding = { left = 1, right = 1 } },
-        },
-        lualine_z = {
-          -- stylua: ignore
+                    -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
@@ -60,6 +55,22 @@ return {
             color = Util.ui.fg("Debug"),
           },
           { "branch" },
+        },
+        lualine_y = {
+
+          {
+            function()
+              return require("noice").api.status.command.get()
+            end,
+            cond = function()
+              return package.loaded["noice"] and require("noice").api.status.command.has()
+            end,
+            color = Util.ui.fg("Statement"),
+          },
+          { "location", padding = { left = 1, right = 1 } },
+        },
+        lualine_z = {
+          { "progress", separator = " ", padding = { left = 1, right = 1 } },
         },
       },
       extensions = { "neo-tree", "lazy" },

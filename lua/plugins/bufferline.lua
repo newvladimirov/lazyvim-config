@@ -1,11 +1,21 @@
+local bufferline = require("bufferline")
+
 return {
   "akinsho/bufferline.nvim",
+  event = "BufEnter",
   config = function()
-    require("bufferline").setup({
+    bufferline.setup({
       options = {
+        -- style_preset = bufferline.style_preset.minimal,
         mode = "buffers",
-        themable = false,
-        always_show_bufferline = true,
+        -- themable = true,
+        -- always_show_bufferline = true,
+        color_icons = false,
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        show_tab_indicators = false,
+
+        enforce_regular_tabs = false,
         separator_style = "thick",
         offsets = {
           {
@@ -16,15 +26,13 @@ return {
           },
         },
         {
-          hover = true,
-          reveal = { "close" },
+          hover = false,
         },
         diagnostics = "nvim_lsp",
         indicator = {
           icon = "  ", -- this should be omitted if indicator style is not 'icon'
           style = "icon",
         },
-        --        separator_style = "slope"
       },
     })
   end,
