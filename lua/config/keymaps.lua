@@ -21,10 +21,6 @@ end
 
 local mappings = {
   -- ["<leader>cu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
-  -- ["<leader>ci"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
-
-  -- experemental bindigs
-  -- ["tsu"] = { "<cmd> TypescriptRemoveUnused<CR>", "Remove unused TS imports" },
   ["tsi"] = { "<cmd> TypescriptAddMissingImports<CR>", "Add missing TS imports" },
 
   ["<C-h>"] = { "<cmd> NvimTmuxNavigateLeft<CR>", "Tmux window left" },
@@ -52,3 +48,5 @@ vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buff
 -- vim.keymap.set("n", "<leader>gr", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Go to reference (T)" })
 
 vim.keymap.set("n", "<leader>x", delete_buffer, { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
+vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Open Git Diffview" })

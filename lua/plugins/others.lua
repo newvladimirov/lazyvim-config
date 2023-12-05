@@ -1,5 +1,5 @@
 return {
-  { "rafamadriz/friendly-snippets" },
+  { "rafamadriz/friendly-snippets", lazy = true },
   { "alexghergh/nvim-tmux-navigation", opts = {}, lazy = false },
   -- {
   --   "windwp/nvim-autopairs",
@@ -9,7 +9,8 @@ return {
   --   end,
   -- },
   -- { "vimpostor/vim-tpipeline", opts = {} },
-  -- { "fgheng/winbar.nvim", opts = { enabled = true }, event = "BufEnter" },
+
+  -- This plugin is useful for "Add missing imports in typescript, but breaks autocompletion for component props in React"
   -- {
   --   "jose-elias-alvarez/typescript.nvim",
   --   config = function()
