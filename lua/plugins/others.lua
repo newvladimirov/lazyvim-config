@@ -19,7 +19,24 @@ return {
   --   lazy = false,
   --   opts = {},
   -- },
-
+  {
+    "L3MON4D3/LuaSnip",
+    keys = function()
+      return {}
+    end,
+  },
+  {
+    "chentoast/marks.nvim",
+    opts = {},
+  },
+  {
+    "mbbill/undotree",
+    config = function()
+      vim.g.undotree_WindowLayout = 2
+      vim.g.undotree_SetFocusWhenToggle = 1
+      vim.g.undotree_SplitWidth = 55
+    end,
+  },
   {
     "mini.comment",
     opts = {
@@ -38,7 +55,7 @@ return {
       cycle_results = false,
     },
   },
-
+  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   -- { "ggandor/flit.nvim", enabled = false },
   { "ggandor/leap.nvim", enabled = false },
