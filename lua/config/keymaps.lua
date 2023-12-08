@@ -51,3 +51,6 @@ vim.keymap.set("n", "<leader>x", delete_buffer, { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Open Git Diffview" })
 vim.keymap.set("n", "<leader>uu", vim.cmd.UndotreeToggle)
+
+vim.keymap.set("i", "<C-h>", "<LEFT>", { desc = "Move left in insert mode" })
+vim.keymap.set("i", "<C-l>", "<RIGHT>", { desc = "Move right in insert mode" })

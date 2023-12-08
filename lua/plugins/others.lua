@@ -3,14 +3,14 @@ return {
   { "alexghergh/nvim-tmux-navigation", opts = {}, lazy = false },
   -- {
   --   "windwp/nvim-autopairs",
-  --   event = "InsertEnter",
+  --   event = "insertenter",
   --   config = function()
   --     require("nvim-autopairs").setup()
   --   end,
   -- },
   -- { "vimpostor/vim-tpipeline", opts = {} },
 
-  -- This plugin is useful for "Add missing imports in typescript, but breaks autocompletion for component props in React"
+  -- this plugin is useful for "add missing imports in typescript, but breaks autocompletion for component props in react"
   -- {
   --   "jose-elias-alvarez/typescript.nvim",
   --   config = function()
@@ -19,8 +19,10 @@ return {
   --   lazy = false,
   --   opts = {},
   -- },
+  { "theprimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   {
-    "L3MON4D3/LuaSnip",
+    "l3mon4d3/luasnip",
+    enabled = false,
     keys = function()
       return {}
     end,
@@ -28,13 +30,17 @@ return {
   {
     "chentoast/marks.nvim",
     opts = {},
+    config = function()
+      require("marks").setup()
+      vim.opt.signcolumn = "yes:3"
+    end,
   },
   {
     "mbbill/undotree",
     config = function()
-      vim.g.undotree_WindowLayout = 2
-      vim.g.undotree_SetFocusWhenToggle = 1
-      vim.g.undotree_SplitWidth = 55
+      vim.g.undotree_windowlayout = 2
+      vim.g.undotree_setfocuswhentoggle = 1
+      vim.g.undotree_splitwidth = 55
     end,
   },
   {
