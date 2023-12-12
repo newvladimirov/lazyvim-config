@@ -19,11 +19,11 @@ return {
       completion = cmp_window.bordered(),
       documentation = cmp_window.bordered(),
     }
-    opts.preselect = cmp.PreselectMode.None
-    opts.completion.completeopt = "noselect"
+    -- opts.preselect = cmp.PreselectMode.None
+    -- opts.completion.completeopt = "noselect"
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
-      ["<CR>"] = cmp.mapping.confirm({ select = false }),
+      -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
 
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then

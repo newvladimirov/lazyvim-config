@@ -4,6 +4,7 @@ return {
     "nvim-telescope/telescope-live-grep-args.nvim",
     config = function()
       require("telescope").load_extension("live_grep_args")
+      require("telescope").load_extension("harpoon")
     end,
     keys = {
       {

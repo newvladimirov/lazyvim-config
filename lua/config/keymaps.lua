@@ -27,6 +27,7 @@ local mappings = {
   ["<C-l>"] = { "<cmd> NvimTmuxNavigateRight<CR>", "Tmux window right" },
   ["<C-j>"] = { "<cmd> NvimTmuxNavigateDown<CR>", "Tmux window down" },
   ["<C-k>"] = { "<cmd> NvimTmuxNavigateUp<CR>", "Tmux window up" },
+  ["<C-\\>"] = { "<cmd> NvimTmuxNavigateLastActive<CR>", "Tmux last active" },
 
   ["<leader>e"] = { "<cmd> NvimTreeFindFileToggle <CR>", "Toggle nvimtree" },
   ["<S-e>"] = { "<cmd> NvimTreeFindFile <CR>", "Find file in tree" },
@@ -54,3 +55,6 @@ vim.keymap.set("n", "<leader>uu", vim.cmd.UndotreeToggle)
 
 vim.keymap.set("i", "<C-h>", "<LEFT>", { desc = "Move left in insert mode" })
 vim.keymap.set("i", "<C-l>", "<RIGHT>", { desc = "Move right in insert mode" })
+
+vim.keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon menu" })
+vim.keymap.set("n", "<leader>ht", require("harpoon.mark").toggle_file, { desc = "Harpoon toggle file" })

@@ -35,6 +35,7 @@ local modules = {
         Personal = "~/_neorg/personal",
         Work = "~/_neorg/work",
       },
+      default_workspace = "Personal",
     },
   },
 }

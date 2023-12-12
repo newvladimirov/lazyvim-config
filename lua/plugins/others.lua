@@ -19,7 +19,13 @@ return {
   --   lazy = false,
   --   opts = {},
   -- },
-  { "theprimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
+  {
+    "theprimeagen/harpoon",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("harpoon").setup({})
+    end,
+  },
   {
     "l3mon4d3/luasnip",
     enabled = false,
@@ -32,7 +38,7 @@ return {
     opts = {},
     config = function()
       require("marks").setup()
-      vim.opt.signcolumn = "yes:3"
+      vim.opt.signcolumn = "yes:1"
     end,
   },
   {
@@ -40,7 +46,7 @@ return {
     config = function()
       vim.g.undotree_windowlayout = 2
       vim.g.undotree_setfocuswhentoggle = 1
-      vim.g.undotree_splitwidth = 55
+      vim.g.undotree_splitwidth = 155
     end,
   },
   {
