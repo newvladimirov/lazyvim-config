@@ -8,6 +8,7 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.conceallevel = 0
 
 vim.opt.swapfile = false
 vim.opt.undofile = false

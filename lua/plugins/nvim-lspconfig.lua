@@ -4,6 +4,7 @@ return {
   "neovim/nvim-lspconfig",
   ---@class PluginLspOpts
   opts = {
+    inlay_hints = { enabled = true },
     ---@type lspconfig.options
     servers = {
       angularls = {

@@ -21,7 +21,17 @@ local modules = {
   ["core.qol.todo_items"] = {},
   ["core.integrations.nvim-cmp"] = {},
   ["core.integrations.treesitter"] = { config = { configure_parsers = true, install_parsers = true } },
-  ["core.concealer"] = { config = { icon_preset = "basic" } },
+  ["core.concealer"] = {
+    config = {
+      icon_preset = "varied",
+      code_block = {
+        content_only = true,
+        conceal = true,
+        highlight = "CursorLine",
+      },
+      icons = {},
+    },
+  },
   ["core.keybinds"] = {
     -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
     config = {
@@ -32,8 +42,8 @@ local modules = {
   ["core.dirman"] = {
     config = {
       workspaces = {
-        Personal = "~/_neorg/personal",
-        Work = "~/_neorg/work",
+        Personal = "~/_neorg_notes/personal",
+        Work = "~/_neorg_notes/work",
       },
       default_workspace = "Personal",
     },

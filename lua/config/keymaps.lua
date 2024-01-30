@@ -58,3 +58,5 @@ vim.keymap.set("i", "<C-l>", "<RIGHT>", { desc = "Move right in insert mode" })
 
 vim.keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon menu" })
 vim.keymap.set("n", "<leader>ht", require("harpoon.mark").toggle_file, { desc = "Harpoon toggle file" })
+
+vim.keymap.set("n", "<leader>tl", require("neotest").run.run_last, { desc = "Run last test" })
