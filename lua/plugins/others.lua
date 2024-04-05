@@ -1,4 +1,9 @@
 return {
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+  },
   { "rafamadriz/friendly-snippets", lazy = true },
   { "alexghergh/nvim-tmux-navigation", opts = {}, lazy = false },
   -- { "styled-components/vim-styled-components", ots = {}, lazy = false },

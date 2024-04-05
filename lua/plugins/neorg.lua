@@ -5,10 +5,9 @@ local M = {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "nvim-cmp",
-    "nvim-lua/plenary.nvim",
+    "luarocks.nvim",
   },
-  build = ":Neorg sync-parsers",
+  lazy = false,
   cmd = "Neorg",
 }
 
