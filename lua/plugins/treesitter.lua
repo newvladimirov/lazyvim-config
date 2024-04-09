@@ -23,10 +23,26 @@ return {
         goto_next = {
           ["]a"] = "@parameter.outer",
           ["]A"] = "@parameter.inner",
+          ["]c"] = "@call.inner",
         },
         goto_previous = {
           ["[a"] = "@parameter.outer",
           ["[A"] = "@parameter.inner",
+          ["[c"] = "@call.inner",
+        },
+      },
+      select = {
+        keymaps = {
+          -- ["aa"] = "@parameter.outer",
+        },
+      },
+      swap = {
+        enable = true,
+        swap_next = {
+          ["<leader>a"] = "@parameter.inner",
+        },
+        swap_previous = {
+          ["<leader>A"] = "@parameter.inner",
         },
       },
     },
