@@ -65,3 +65,6 @@ vim.keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { des
 vim.keymap.set("n", "<leader>ht", require("harpoon.mark").toggle_file, { desc = "Harpoon toggle file" })
 
 vim.keymap.set("n", "<leader>tl", require("neotest").run.run_last, { desc = "Run last test" })
+
+-- Update dependency on the line
+vim.keymap.set({ "n" }, "<LEADER>nu", require("package-info").update, { silent = true, noremap = true })
