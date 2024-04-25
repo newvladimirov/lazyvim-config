@@ -12,6 +12,11 @@ return {
         "<cmd> Telescope live_grep_args <CR>",
         desc = "Telescope live grep",
       },
+      {
+        "<leader>fb <CR>",
+        "<cmd> Telescope buffers",
+        desc = "Find buffer",
+      },
     },
   },
   keys = {
@@ -20,6 +25,7 @@ return {
   },
   opts = {
     defaults = {
+      initial_mode = "normal",
       mappings = {
         n = {
           ["t"] = require("trouble.providers.telescope").open_with_trouble,

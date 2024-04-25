@@ -26,7 +26,12 @@ return {
       -- },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = {},
+        lualine_b = {
+          function()
+            local pi_status = require("package-info.ui.generic.loading-status")
+            return pi_status.get()
+          end,
+        },
         lualine_c = {
           Util.lualine.root_dir(),
           { Util.lualine.pretty_path() },
@@ -42,10 +47,13 @@ return {
           },
         },
         lualine_x = {
-                    -- stylua: ignore
           {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            function()
+              return require("noice").api.status.mode.get()
+            end,
+            cond = function()
+              return package.loaded["noice"] and require("noice").api.status.mode.has()
+            end,
             color = Util.ui.fg("Constant"),
           },
           -- stylua: ignore

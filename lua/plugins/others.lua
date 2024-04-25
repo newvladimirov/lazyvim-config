@@ -78,6 +78,9 @@ return {
     config = function() end,
   },
 
+  -- return {
+  --   "aznhe21/actions-preview.nvim",
+  -- },
   {
     "folke/twilight.nvim", -- dimms the background of the code that is not in focus
     enabled = false,
@@ -109,5 +112,4 @@ return {
   -- { "ggandor/flit.nvim", enabled = false },
   { "ggandor/leap.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
-  { "folke/noice.nvim", enabled = true },
 }

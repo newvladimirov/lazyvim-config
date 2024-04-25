@@ -38,8 +38,6 @@ for key, val in pairs(mappings) do
   vim.api.nvim_set_keymap("n", key, val[1], { noremap = true, silent = true, desc = val[2] })
 end
 
-vim.keymap.set("n", "<leader>caa", require("actions-preview").code_actions)
-
 -- LSP
 vim.keymap.set("n", "gr", "<CMD>Trouble lsp_references<CR>", { desc = "Trouble LSP references" })
 vim.keymap.set("n", "gd", "<CMD>Trouble lsp_definitions<CR>", { desc = "Trouble LSP definitions" })
