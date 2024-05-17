@@ -43,6 +43,8 @@ vim.keymap.set("n", "gr", "<CMD>Trouble lsp_references<CR>", { desc = "Trouble L
 vim.keymap.set("n", "gd", "<CMD>Lspsaga goto_definition<CR>", { desc = "Lspsaga go to definition" })
 vim.keymap.set("n", "K", "<CMD>Lspsaga hover_doc<CR>", { desc = "Lspsaga hover_doc" })
 vim.keymap.set("n", "<leader>ci", "<CMD>Lspsaga finder<CR>", { desc = "Lspsaga finder (Code info)" })
+vim.keymap.set("n", "]d", "<CMD>Lspsaga diagnostic_jump_next<CR>", { desc = "Lspsaga diags next" })
+vim.keymap.set("n", "[d", "<CMD>Lspsaga diagnostic_jump_prev<CR>", { desc = "Lspsaga diags prev" })
 
 -- Buffers
 vim.keymap.set("n", "<leader><leader>]", "<CMD>BufferLineMoveNext<CR>")
