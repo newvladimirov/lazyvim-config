@@ -41,6 +41,7 @@ end
 -- LSP
 vim.keymap.set("n", "gr", "<CMD>Trouble lsp_references<CR>", { desc = "Trouble LSP references" })
 vim.keymap.set("n", "gd", "<CMD>Trouble lsp_definitions<CR>", { desc = "Trouble LSP definitions" })
+vim.keymap.set("n", "K", "<CMD>Lspsaga hover_doc<CR>", { desc = "Lspsaga hover_doc" })
 
 -- Buffers
 vim.keymap.set("n", "<leader><leader>]", "<CMD>BufferLineMoveNext<CR>")

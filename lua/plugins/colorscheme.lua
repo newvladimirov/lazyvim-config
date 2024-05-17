@@ -36,6 +36,8 @@ return {
             keywords = "NONE",
             numbers = "NONE",
             operators = "NONE",
+            preprocs = "NONE",
+            attributes = "NONE",
             strings = "NONE",
             types = "NONE",
             variables = "NONE",
@@ -51,7 +53,11 @@ return {
         },
         palettes = {},
         specs = {},
-        groups = {},
+        groups = {
+          all = {
+            ["@tag.attribute"] = { style = "NONE" },
+          },
+        },
       })
     end,
   },

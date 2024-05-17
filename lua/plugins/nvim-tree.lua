@@ -1,6 +1,9 @@
 return {
   "nvim-tree/nvim-tree.lua",
   opts = {
+    -- sync_root_with_cwd = true,
+    -- respect_buf_cwd = true,
+
     git = {
       enable = true,
     },
@@ -10,10 +13,11 @@ return {
       exclude = {},
     },
     view = {
-      width = 50,
+      width = 45,
     },
     update_focused_file = {
       enable = false,
+      -- update_root = true,
     },
     renderer = {
       highlight_git = true,

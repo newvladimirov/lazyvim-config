@@ -2,31 +2,36 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   dependencies = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
-    --                 -- OPTIONAL:
-    --                     --   `nvim-notify` is only needed, if you want to use the notification view.
-    --                         --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
-  config = function()
-    require("noice").setup({
-      views = {
-        cmdline_popup = {
-          position = {
-            row = "50%",
-            col = "50%",
-          },
-          -- border = {
-          --   style = "none",
-          --   padding = { 1, 2 },
-          -- },
-          filter_options = {},
-          win_options = {
-            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-          },
+  opts = {
+    views = {
+      cmdline_popup = {
+        position = {
+          row = "50%",
+          col = "50%",
+        },
+        -- border = {
+        --   style = "none",
+        --   padding = { 1, 2 },
+        -- },
+        filter_options = {},
+        win_options = {
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
         },
       },
-    })
-  end,
+    },
+    routes = {
+      {
+        filter = {
+          event = "notify",
+          find = "No information available",
+        },
+        opts = {
+          skip = true,
+        },
+      },
+    },
+  },
 }
