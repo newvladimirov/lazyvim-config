@@ -1,19 +1,4 @@
 local util = require("lspconfig.util")
-local configs = require("lspconfig.configs")
-
-if not configs.ngtoolslsp then
-  configs.ngtoolslsp = {
-    default_config = {
-      name = "ng-tools-lsp",
-      filetypes = { "angular", "typescript" },
-      cmd = {
-        "tsx",
-        "/Users/alexey.vladimirov/_sandbox/ng-tools-lsp/src/index.ts",
-        "--stdio",
-      },
-    },
-  }
-end
 
 local function find_in_table(tab, val)
   for index, item in ipairs(tab) do
@@ -41,13 +26,54 @@ return {
   opts = {
     inlay_hints = { enabled = true },
     servers = {
-      angularls = {
-        root_dir = util.root_pattern("angular.json", "project.json"),
+      -- angularls = {
+      --   root_dir = util.root_pattern("angular.json", "project.json"),
+      --   cmd = angularCmd,
+      --   on_new_config = function(new_config, new_root_dir)
+      --     new_config.cmd = angularCmd
+      --   end,
+      -- },
+      tsserver = {
+        root_dir = util.root_pattern("tsconfig.base.json"),
       },
-      ngtoolslsp = {
-        root_dir = util.root_pattern("angular.json", "project.json"),
-        -- root_dir = vim.fn.getcwd(),
-      },
+      -- ngtoolslsp = {
+      --   root_dir = util.root_pattern("angular.json", "project.json"),
+      --   -- root_dir = vim.fn.getcwd(),
+      -- },
+    },
+    setup = {
+      angularls = function(_, opts)
+        local angularls_path = require("mason-registry").get_package("angular-language-server"):get_install_path()
+        local cmd = {
+          "ngserver",
+          "--stdio",
+          "--forceStrictTemplates",
+          "--tsProbeLocations",
+          table.concat({
+            angularls_path,
+            vim.uv.cwd(),
+          }, ","),
+          "--ngProbeLocations",
+          table.concat({
+            angularls_path .. "/node_modules/@angular/language-server",
+            vim.uv.cwd(),
+          }, ","),
+        }
+
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+        require("lspconfig").angularls.setup({
+          cmd = cmd,
+          fileTypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+          root_dir = util.root_pattern("angular.json", "nx.json"),
+          capabilities = capabilities,
+          on_new_config = function(new_config, new_root_dir)
+            new_config.cmd = cmd
+          end,
+        })
+        return true
+      end,
     },
   },
 }
