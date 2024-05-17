@@ -13,7 +13,7 @@ return {
         desc = "Telescope live grep",
       },
       {
-        "<leader>fb <CR>",
+        "<leader>fb<CR>",
         "<cmd> Telescope buffers",
         desc = "Find buffer",
       },
@@ -26,6 +26,9 @@ return {
   opts = {
     defaults = {
       initial_mode = "normal",
+      find_files = {
+        hidden = true,
+      },
       mappings = {
         n = {
           ["t"] = require("trouble.providers.telescope").open_with_trouble,
