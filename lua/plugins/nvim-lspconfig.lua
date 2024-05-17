@@ -14,7 +14,7 @@ return {
   "neovim/nvim-lspconfig",
   init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    local keys_to_remove = { "gr", "gd" }
+    local keys_to_remove = { "gr", "gd", "K" }
     for _, key in ipairs(keys_to_remove) do
       local index = find_in_table(keys, key)
       if index ~= nil then
@@ -48,6 +48,7 @@ return {
           "ngserver",
           "--stdio",
           "--forceStrictTemplates",
+          "--includeAutomaticOptionalChainCompletions",
           "--tsProbeLocations",
           table.concat({
             angularls_path,
