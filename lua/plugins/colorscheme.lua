@@ -1,5 +1,5 @@
 return {
-  -- { "navarasu/onedark.nvim", priority = 1000, lazy = false },
+  { "projekt0n/github-nvim-theme", priority = 1000 },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
@@ -7,7 +7,7 @@ return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy = false },
   {
     "EdenEast/nightfox.nvim",
-    lazy = false,
+    -- lazy = false,
     priority = 1000,
     config = function()
       require("nightfox").setup({
@@ -61,16 +61,4 @@ return {
       })
     end,
   },
-  -- { "B4mbus/oxocarbon-lua.nvim", config = function() end },
-
-  -- {
-  --   "AlexvZyl/nordic.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("nordic").setup({
-  --       transparent_bg = false,
-  --     })
-  --   end,
-  -- },
 }

@@ -17,6 +17,10 @@ return {
         "<cmd> Telescope buffers",
         desc = "Find buffer",
       },
+      { "<leader>ff", LazyVim.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>fF", LazyVim.telescope("files"), desc = "Find Files (Root Dir)" },
+      { "<leader>fr", LazyVim.telescope("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>fR", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
     },
   },
   keys = {
