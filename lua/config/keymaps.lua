@@ -57,6 +57,7 @@ vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buff
 
 vim.keymap.set("n", "<leader>x", delete_buffer, { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
+vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<CR>", { desc = "Git blame" })
 vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Open Git Diffview" })
 vim.keymap.set("n", "<leader>uu", vim.cmd.UndotreeToggle)
 

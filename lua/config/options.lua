@@ -11,6 +11,7 @@ vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.conceallevel = 0
 vim.opt.relativenumber = false
+vim.opt.scrolloff = 17
 
 vim.opt.swapfile = false
 vim.opt.undofile = false

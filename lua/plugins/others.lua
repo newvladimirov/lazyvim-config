@@ -1,5 +1,11 @@
 return {
   {
+    "FabijanZulj/blame.nvim",
+    config = function()
+      require("blame").setup()
+    end,
+  },
+  {
     "vhyrro/luarocks.nvim",
     priority = 1000,
     config = true,

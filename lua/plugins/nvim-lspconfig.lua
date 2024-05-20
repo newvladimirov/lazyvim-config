@@ -26,20 +26,9 @@ return {
   opts = {
     inlay_hints = { enabled = true },
     servers = {
-      -- angularls = {
-      --   root_dir = util.root_pattern("angular.json", "project.json"),
-      --   cmd = angularCmd,
-      --   on_new_config = function(new_config, new_root_dir)
-      --     new_config.cmd = angularCmd
-      --   end,
-      -- },
       tsserver = {
         root_dir = util.root_pattern("tsconfig.base.json"),
       },
-      -- ngtoolslsp = {
-      --   root_dir = util.root_pattern("angular.json", "project.json"),
-      --   -- root_dir = vim.fn.getcwd(),
-      -- },
     },
     setup = {
       angularls = function(_, opts)
