@@ -15,6 +15,13 @@ return {
     local cmp = require("cmp")
     local cmp_window = require("cmp.config.window")
 
+    cmp.setup.filetype({ "sql" }, {
+      sources = {
+        { name = "vim-dadbod-completion" },
+        { name = "buffer" },
+      },
+    })
+
     opts.window = {
       completion = cmp_window.bordered(),
       documentation = cmp_window.bordered(),
