@@ -29,6 +29,9 @@ return {
       tsserver = {
         root_dir = util.root_pattern("tsconfig.base.json"),
       },
+      eslint = {
+        root_dir = util.root_pattern(".eslintrc.json"),
+      },
     },
     setup = {
       angularls = function(_, opts)
