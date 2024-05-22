@@ -34,6 +34,14 @@ return {
       },
     },
     setup = {
+      -- jsonls = {
+      --   settings = {
+      --     json = {
+      --       schemas = require("schemastore").json.schemas(),
+      --       validate = { enable = true },
+      --     },
+      --   },
+      -- },
       angularls = function(_, opts)
         local angularls_path = require("mason-registry").get_package("angular-language-server"):get_install_path()
         local cmd = {
