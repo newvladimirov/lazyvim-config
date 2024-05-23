@@ -1,5 +1,5 @@
 return {
-  { "projekt0n/github-nvim-theme", priority = 1000 },
+  { "projekt0n/github-nvim-theme", priority = 1000, commit = "4d5a4ce" },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
