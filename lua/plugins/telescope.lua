@@ -30,6 +30,17 @@ return {
   opts = {
     defaults = {
       initial_mode = "normal",
+      layout_strategy = "vertical",
+      sorting_strategy = "ascending",
+      layout_config = {
+        vertical = {
+          prompt_position = "top",
+          mirror = true,
+        },
+      },
+      path_display = {
+        "filename_first",
+      },
       find_files = {
         hidden = true,
       },
