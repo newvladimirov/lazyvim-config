@@ -1,4 +1,12 @@
 return {
+  {
+    "sontungexpt/witch",
+    priority = 1000,
+    lazy = false,
+    config = function(_, opts)
+      require("witch").setup(opts)
+    end,
+  },
   { "projekt0n/github-nvim-theme", priority = 1000, commit = "4d5a4ce" },
   {
     "olimorris/onedarkpro.nvim",
