@@ -66,6 +66,7 @@ return {
       "typescript",
       "vim",
       "yaml",
+      "norg",
     },
   },
 }

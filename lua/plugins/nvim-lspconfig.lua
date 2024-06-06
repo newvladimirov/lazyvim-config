@@ -26,6 +26,9 @@ return {
   opts = {
     inlay_hints = { enabled = true },
     servers = {
+      vtsls = {
+        root_dir = util.root_pattern("tsconfig.base.json"),
+      },
       tsserver = {
         root_dir = util.root_pattern("tsconfig.base.json"),
       },
