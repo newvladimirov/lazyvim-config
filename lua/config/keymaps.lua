@@ -3,6 +3,17 @@
 -- Add any additional keymaps here
 --
 --
+--
+
+function reset_hl()
+  local hl_groups = vim.api.nvim_get_hl(0, {})
+
+  for key, hl_group in pairs(hl_groups) do
+    if hl_group.italic then
+      vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, { italic = false }))
+    end
+  end
+end
 
 function delete_buffer()
   local bd = require("mini.bufremove").delete
@@ -37,6 +48,8 @@ for key, val in pairs(mappings) do
   -- Movement mapping: val[2]
   vim.api.nvim_set_keymap("n", key, val[1], { noremap = true, silent = true, desc = val[2] })
 end
+
+vim.keymap.set("n", "<leader>rh", reset_hl, { desc = "Reset hightlight groups" })
 
 -- LSP
 vim.keymap.set("n", "gr", "<CMD>Trouble lsp_references<CR>", { desc = "Trouble LSP references" })
