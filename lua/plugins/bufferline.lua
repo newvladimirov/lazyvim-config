@@ -18,6 +18,10 @@ return {
 
         enforce_regular_tabs = true,
         separator_style = "thick",
+        indicator = {
+          style = "underline",
+        },
+
         offsets = {
           {
             filetype = "NvimTree",

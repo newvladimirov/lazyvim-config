@@ -51,6 +51,17 @@ end
 
 vim.keymap.set("n", "<leader>rh", reset_hl, { desc = "Reset hightlight groups" })
 
+-- Terminal fixes
+vim.keymap.del("n", "<c-/>")
+vim.keymap.del("n", "<c-_>")
+
+vim.keymap.set("n", "<c-/>", function()
+  LazyVim.terminal()
+end, { desc = "Terminal (cwd)" })
+vim.keymap.set("n", "<c-_>", function()
+  LazyVim.terminal()
+end, { desc = "Terminal (cwd)" })
+
 -- LSP
 vim.keymap.set("n", "gr", "<CMD>Trouble lsp_references<CR>", { desc = "Trouble LSP references" })
 vim.keymap.set("n", "gd", "<CMD>Lspsaga goto_definition<CR>", { desc = "Lspsaga go to definition" })

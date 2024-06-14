@@ -14,6 +14,7 @@ return {
     },
     view = {
       width = 45,
+      adaptive_size = true,
     },
     update_focused_file = {
       enable = false,
