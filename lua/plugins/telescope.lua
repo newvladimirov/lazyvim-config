@@ -1,5 +1,5 @@
 return {
-  "telescope.nvim",
+  "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-telescope/telescope-live-grep-args.nvim",
     config = function()
@@ -17,9 +17,9 @@ return {
         "<cmd> Telescope buffers",
         desc = "Find buffer",
       },
-      { "<leader>ff", LazyVim.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
-      { "<leader>fF", LazyVim.telescope("files"), desc = "Find Files (Root Dir)" },
-      { "<leader>fr", LazyVim.telescope("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>ff", LazyVim.pick("files", { cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>fF", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+      { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
       { "<leader>fR", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
     },
   },
@@ -46,8 +46,8 @@ return {
       },
       mappings = {
         n = {
-          ["t"] = require("trouble.providers.telescope").open_with_trouble,
-          ["C-t"] = require("trouble.providers.telescope").open_with_trouble,
+          ["t"] = require("trouble.sources.telescope").open,
+          ["C-t"] = require("trouble.sources.telescope").open,
         },
       },
     },
